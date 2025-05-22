@@ -1,43 +1,35 @@
 name: Run Telegram Bot 24/7
 
-pusht
+on:
 
-Jobs
+push:
 
 branches: [main]
 
-run-bet:
+jobs:
+
+run-bot:
 
 runs-on: ubuntu-latest
 
 steps:
 
-uses: ections/checkout@v
-
-
+uses: actions/checkout@v3
 
 name: Set up Python
 
-
-
-uves: actions/setup-python@vs
-
-
+uses: actions/setup-python@v4
 
 with:
 
+python-version: '3.10'
 
-
-python-version: 3.10
-
+-
 
 name: Install dependencies
 
-
-
 run: pip install -r requirements.txt
 
+name: Run bot
 
-nate: Run bot
-
-run: python app.py￼Enter
+run: python app.py
